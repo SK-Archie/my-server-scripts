@@ -1,0 +1,27 @@
+# Chat
+on chat:
+	cancel event
+	send "&7[No Rank] &8%player%:&7 Hello!"
+	
+
+command /chat [<text>] [<text>] [<text>]:
+	permission: chat.chat
+	permission message: &cIt seems you are muted!
+	cooldown: 3 seconds
+	cooldown message: &cYou are on chat cooldown! &7[ 3 seconds ]
+	trigger:
+		if arg 2 is not set:
+			send "&7[No Rank] &8%player%:&7 %arg-1%"
+		if arg-2 is "123456789":
+			if arg-3 is "abc":
+				send "&c&lSTAFF &4%player%&f: &c%arg-1%"
+		if arg-1 is "help":
+			send " &6&lCHAT " to player
+			send "&6Our server uses a custom chat script! Meaning that if you talk in normal chat, is makes you say hello!. The way to acctually chat is &a/chat <message>&6. If you have any further questions, please open a ticket on the discord! &7[ /discord ]"
+			
+# Daily
+command /daily:
+	cooldown: 24 hours
+	cooldown message: &aYou are on cooldown &7[ THIS CAN ONLY BE REDEEMED ONCE PER DAY! ]
+	trigger:
+		send "e" 
